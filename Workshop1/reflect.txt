@@ -1,0 +1,7 @@
+This workshop was a good way of refreshing my memory of generic c++ conventions, rule of three, read, and display functions
+after a long summer break. The new concept of static variables where a variables value is persistant and accessible within its
+scope is very useful and pretty easy to use. However, extern variables, though very similar aside from being file scope, 
+gave me issues for a while as I decalred them in my header file and had linking issues until i realized that i need to define
+them in my cpp file for the linking issues to resolve. Recieveing arguments from the command line in my main function was 
+straightforward. Finally, part 2 of the workshop required the use of dynamic memeory allocation which was useful in brushing 
+up on as i had become rusty.
