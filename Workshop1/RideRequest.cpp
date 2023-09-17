@@ -100,7 +100,7 @@ namespace sdds {
 			cout << endl;
 		}
 		else {
-			cout << ++counter << ". " << "No Ride Request" << endl;
+			cout << " " << ++counter << ". " << "No Ride Request" << endl;
 		}
 	}
 }
