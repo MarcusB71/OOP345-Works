@@ -79,7 +79,7 @@ namespace sdds {
 		if (m_name[0] != '\0') {
 			cout.width(2);
 			cout.setf(ios::left);
-			cout << " " << ++counter << ". ";
+			cout << ++counter << ". ";
 			cout.width(10);
 			cout << m_name << "|";
 			cout.width(25);
@@ -100,7 +100,7 @@ namespace sdds {
 			cout << endl;
 		}
 		else {
-			cout << " " << ++counter << ". " << "No Ride Request" << endl;
+			cout << ++counter << ". " << "No Ride Request" << endl;
 		}
 	}
 }
