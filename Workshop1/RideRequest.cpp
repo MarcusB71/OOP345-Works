@@ -5,7 +5,7 @@ mbrown106@myseneca.ca
 #define _CRT_SECURE_NO_WARNINGS
 #include "RideRequest.h"
 #include <string.h>
-#define _CRT_SECURE_NO_WARNINGS
+
 using namespace std;
 namespace sdds {
 	double g_taxrate = 0.0;

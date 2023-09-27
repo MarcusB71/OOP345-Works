@@ -20,14 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RideRequest.cpp" />
-    <ClCompile Include="w1_p1.cpp" />
+    <ClCompile Include="w1_p2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RideRequest.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="reflect.txt" />
     <Text Include="rides1.txt" />
     <Text Include="rides2.txt" />
+    <Text Include="rides4.txt" />
     <Text Include="sample_output.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
