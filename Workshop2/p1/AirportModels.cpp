@@ -34,13 +34,13 @@ namespace sdds {
     {
         if (*this) {
             os.fill('.');
-            os << setw(20) << right << "Airport Code : " << left << setw(30) << m_code << endl;
-            os << setw(20) << right << "Airport Name : " << left << setw(30) << m_name << endl;
-            os << setw(20) << right << "City : " << left << setw(30) << m_city << endl;
-            os << setw(20) << right << "State : " << left << setw(30) << m_state << endl;
-            os << setw(20) << right << "Country : " << left << setw(30) << m_country << endl;
-            os << setw(20) << right << "Latitude : " << left << setw(30) << m_latitude << endl;
-            os << setw(20) << right << "Longitude : " << left << setw(30) << m_longitude << endl;
+            os << setw(20) << right << "Airport Code" << " : " << left << setw(30) << m_code << endl;
+            os << setw(20) << right << "Airport Name" << " : " << left << setw(30) << m_name << endl;
+            os << setw(20) << right << "City" << " : " << left << setw(30) << m_city << endl;
+            os << setw(20) << right << "State" << " : " << left << setw(30) << m_state << endl;
+            os << setw(20) << right << "Country" << " : " << left << setw(30) << m_country << endl;
+            os << setw(20) << right << "Latitude" << " : " << left << setw(30) << m_latitude << endl;
+            os << setw(20) << right << "Longitude" << " : " << left << setw(30) << m_longitude << endl;
         }
         else {
             os << "Empty Airport";
