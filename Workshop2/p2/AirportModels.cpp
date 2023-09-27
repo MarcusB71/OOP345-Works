@@ -127,11 +127,11 @@ namespace sdds {
     }
     AirportLog::AirportLog(AirportLog&& rh) noexcept
     {
-        *this = rh; // should be the same as below
-        // m_countAirports = rh.m_countAirports;
-        // m_airports = rh.m_airports;
-        // rh.m_countAirports = 0;
-        // rh.m_airports = nullptr;
+        // *this = rh; // should be the same as below
+        m_countAirports = rh.m_countAirports;
+        m_airports = rh.m_airports;
+        rh.m_countAirports = 0;
+        rh.m_airports = nullptr;
     }
     AirportLog& AirportLog::operator=(AirportLog&& rh) noexcept
     {
