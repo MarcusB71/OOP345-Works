@@ -1,0 +1,10 @@
+The new content for this workshop included rule of 5 which is for the move functionality whereby you delete your 
+member variables and then assign them to the values of another object instead of creating a copy of those values. 
+This proved to be more efficient when compiling. Regarding the one argument constructor, I believe using a vector
+would allow for automatic sizing of the array, but am not entirely sure as we have yet to learn vectors.
+Additionally, in part 2 of the workshop we had to implement a Timer module which utilized the chrono library and 
+would keep track of a start and end time and then could check the duration between them. This library was confusing 
+to use. That being said, I have only used a few c++ libraries so i am not that comfortable with them. As for the 
+difference between a system clock and a steady clock, the steady can be thought of as a stopwatch, unable to tell 
+the current time, but can tell the difference betwen start and stop. This is unlike a system clock which
+occasionally has to correct itself.
