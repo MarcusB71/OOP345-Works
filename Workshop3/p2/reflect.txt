@@ -14,3 +14,11 @@ we can then create specializations to include Book types:
     Book Collection<Book, 10>::m_smallestItem("", 1, 10000);
 
 Book being initialized to <Book, 72> is neccessary because our OrderedCollection Class always has a capacity of 72, but i believe there would be a way of changing the hard coded 72 to a variable. This I believe would then require the code within main to specify what number is being passed in addition to the type of T. However, if we then changed out collection template to include <Book, const unsigned C> then we could have OrderedCollections of any size
+
+The definitions and implementations for Collection and OrderedCollection were all included in the header file because this is how templates are created so they can be reused and ready at compile time. There is however a way of creating explicit instantiations of templates in cpp files as: template Class OrderedCollection<double,50.5>; I could see this being useful if you had a static variable within your template and you incremented it each time that specific template was used, but otherwise it doesnt seem particularily useful.
+
+I added a > and < operator overload as it was needed to compare the size of Books in the orderedCollection class. Additionally, the avgPagesPerCh function was just a simple calculation that just did some abstraction.
+
+T getSmallestItem() and T getLargestItem() are not queries as they return static variables.
+
+T& operator[](size_t index) cannot be a query because we need it in the orderedCollection class in order to set the value of m_items[index]
