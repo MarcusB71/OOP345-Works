@@ -1,0 +1,16 @@
+/*
+Name: Marcus Brown
+Email: mbrown106@myseneca.ca
+StNo: 127900223
+Date: 1/10/2023
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.*/
+
+The reason we define the class objects outside of the class definition is so that our template is viable with many types. Had we initialized it with 9999 within the class definition we would not be able to utilize our template with Book type as its constructor requires zero or three parameters 
+by doing this:
+    template<typename T, const unsigned C>
+    T Collection<T, C>::m_smallestItem(9999);
+we can then create specializations to include Book types:
+    template<>
+    Book Collection<Book, 10>::m_smallestItem("", 1, 10000);
+
+Book being initialized to <Book, 72> is neccessary because our OrderedCollection Class always has a capacity of 72, but i believe there would be a way of changing the hard coded 72 to a variable. This I believe would then require the code within main to specify what number is being passed in addition to the type of T. However, if we then changed out collection template to include <Book, const unsigned C> then we could have OrderedCollections of any size
