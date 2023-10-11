@@ -1,0 +1,45 @@
+/*
+Name: Marcus Brown
+Email: mbrown106@myseneca.ca
+StNo: 127900223
+Date: 2023/10/11
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.*/
+
+The relationship between Cheese and CheeseParty is of Association where as the relationship between Cheese and CheeseShop
+is of Aggregation. Association is a loosly coupled relationship where one class uses another, but does not have
+ownership. Aggregation on the other hand is a highly coupled situation where one class owns the other. 
+In this Workshop Cheese existed seperate from CheeseParty, but Cheese did not exist seperate from CheeseShop.
+CheeseParty was not responsible for the destruction of Cheese, it merely had to maintain a list of the Cheese 
+available. CheeseShop on the other hand was responsible for the destruction of Cheese. This meant that When dealing 
+with the destruction of CheeseParty we simply deleted the array:
+ for (size_t i = 0; i < m_numCheeses; i++) {
+            m_pCheeses[i] = nullptr;
+        }
+        delete[] m_pCheeses;
+However, when dealing with the destruction of CheeseShop we had to delete the Cheese first and then delete the outer array:
+ for (size_t i = 0; i < m_numCheese; i++) {
+            delete m_arrOfPtrCheese[i];
+            m_arrOfPtrCheese[i] = nullptr;
+        }
+        delete[] m_arrOfPtrCheese;
+
+In our Association, CheeseParty, we could assign the m_pCheeses[i] = to an existing Cheese:
+ for (size_t i = 0; i < m_numCheeses; i++) {
+                m_pCheeses[i] = CPCopy.m_pCheeses[i];
+            }
+However, for our Aggregation, CheeseShop, we had to create new Cheese objects to be dynamically allocated:
+ const Cheese** temp = new const Cheese * [m_numCheese + 1];
+        for (size_t i = 0; i < m_numCheese; i++) {
+            temp[i] = m_arrOfPtrCheese[i];
+        }
+        temp[m_numCheese] = new Cheese(cheese);
+        delete[] m_arrOfPtrCheese;
+        m_arrOfPtrCheese = temp;
+
+The addCheese for CheeseShop required that a new Cheese be created as each array is responsible for its own Cheese.
+The addCheese for CheeseParty required first that we check if the cheese already exists because the Cheese is its own entity
+so having it exist twice in our array would cause memeory issues. We then would add the cheese reference of the existing cheese 
+if it did not exist in our array.
+
+The difference between the remove and shrink functions that i implemented, had they been created for the CheeseParty module as well
+is that we would have to delete the Cheese object from memory as opposed to just removing it from the array.
