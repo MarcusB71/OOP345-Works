@@ -92,7 +92,7 @@ namespace sdds {
     }
     ostream& CheeseParty::print(ostream& os)const {
         os << "--------------------------" << std::endl;
-        os << m_name << std::endl;
+        os << "Cheese Party" << std::endl;
         os << "--------------------------" << std::endl;
         if (m_numCheeses) {
             for (size_t i = 0; i < m_numCheeses; i++) {
