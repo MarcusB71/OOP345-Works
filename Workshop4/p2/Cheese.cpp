@@ -44,7 +44,7 @@ namespace sdds {
     Cheese::Cheese(const Cheese& other) {
         *this = other;
     }
-    Cheese::~Cheese() {}
+
     Cheese Cheese::slice(size_t weight) {
         Cheese temp{};
         if (m_weight >= weight) {

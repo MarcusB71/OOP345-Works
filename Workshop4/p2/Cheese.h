@@ -22,7 +22,6 @@ namespace sdds {
         Cheese(const std::string& str);
         Cheese& operator=(const Cheese& other);
         Cheese(const Cheese& other);
-        ~Cheese();
         Cheese slice(size_t weight);
         static std::string trim(const std::string& str);
         std::ostream& print(std::ostream& os)const;

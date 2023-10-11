@@ -10,7 +10,7 @@ I have done all the coding by myself and only copied the code that my professor 
 #include <iostream>
 using namespace std;
 namespace sdds {
-    sdds::CheeseShop::CheeseShop() {}
+    sdds::CheeseShop::CheeseShop() :m_name(""), m_numCheese(0), m_arrOfPtrCheese(nullptr) {}
 
     sdds::CheeseShop::CheeseShop(const std::string& name) : m_name(name), m_numCheese(0), m_arrOfPtrCheese(nullptr) {}
 
@@ -47,11 +47,14 @@ namespace sdds {
     sdds::CheeseShop::~CheeseShop() { clearCS(); }
 
     void CheeseShop::clearCS() {
-        for (size_t i = 0; i < m_numCheese; i++) {
-            delete m_arrOfPtrCheese[i];
-            m_arrOfPtrCheese[i] = nullptr;
+        if (*this) {
+            for (size_t i = 0; i < m_numCheese; i++) {
+                delete m_arrOfPtrCheese[i];
+                m_arrOfPtrCheese[i] = nullptr;
+            }
         }
         delete[] m_arrOfPtrCheese;
+        m_arrOfPtrCheese = nullptr;
         m_numCheese = 0;
         m_name = "";
     }
