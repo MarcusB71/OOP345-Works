@@ -73,7 +73,7 @@ namespace sdds {
         return rTrim;
     }
     ostream& Cheese::print(ostream& os)const {
-        os << "|" << left << setw(21) << m_name << "|" << setw(5) << m_weight << "|" << fixed << setprecision(2) << setw(5) << m_pricePerGram << "|" << setw(34) << right << m_desc << "|" << std::endl;
+        os << "|" << left << setw(21) << m_name << "|" << setw(5) << m_weight << "|" << fixed << setprecision(2) << setw(5) << m_pricePerGram << "|" << setw(34) << right << m_desc << " |" << std::endl;
         return os;
     }
     size_t Cheese::getWeight()const {

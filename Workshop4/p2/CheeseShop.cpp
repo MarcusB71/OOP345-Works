@@ -80,7 +80,7 @@ namespace sdds {
                 // os << m_arrOfPtrCheese[i]; 
                 os << *m_arrOfPtrCheese[i];
             }
-            os << "--------------------------";
+            os << "--------------------------" << std::endl;
         }
         else {
             os << "This shop is out of cheese!" << std::endl;
