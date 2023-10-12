@@ -72,14 +72,17 @@ namespace sdds {
         return *this;
     }
     void CheeseParty::shrink(size_t index) {
-        const Cheese** temp = new const Cheese * [m_numCheeses - 1];
-        for (size_t i = 0, j = 0; i < m_numCheeses; i++) {
-            if (i == index) { j++; }
-            temp[i] = m_pCheeses[j];
+        if (index < m_numCheeses)
+        {
+            const Cheese** temp = new const Cheese * [m_numCheeses - 1];
+            for (size_t i = 0, j = 0; i < m_numCheeses; i++) {
+                if (i == index) { j++; }
+                temp[i] = m_pCheeses[j];
+            }
+            delete[] m_pCheeses;
+            m_pCheeses = temp;
+            m_numCheeses--;
         }
-        delete[] m_pCheeses;
-        m_pCheeses = temp;
-        m_numCheeses--;
     }
     void sdds::CheeseParty::clearCP() {
         for (size_t i = 0; i < m_numCheeses; i++) {
