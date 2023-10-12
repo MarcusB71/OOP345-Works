@@ -75,7 +75,7 @@ namespace sdds {
         if (index < m_numCheeses)
         {
             const Cheese** temp = new const Cheese * [m_numCheeses - 1];
-            for (size_t i = 0, j = 0; i < m_numCheeses; i++) {
+            for (size_t i = 0, j = 0; i < m_numCheeses - 1; i++, j++) {
                 if (i == index) { j++; }
                 temp[i] = m_pCheeses[j];
             }
