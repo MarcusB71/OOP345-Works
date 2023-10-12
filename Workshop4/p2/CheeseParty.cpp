@@ -62,7 +62,7 @@ namespace sdds {
         return *this;
     }
     CheeseParty& CheeseParty::removeCheese() {
-        size_t index = 0;
+        unsigned index = 0;
         for (size_t i = 0; i < m_numCheeses; i++) {
             if (!m_pCheeses[i]->getWeight()) {
                 index = i;
@@ -71,7 +71,7 @@ namespace sdds {
         }
         return *this;
     }
-    void CheeseParty::shrink(size_t index) {
+    void CheeseParty::shrink(unsigned index) {
         if (index < m_numCheeses)
         {
             const Cheese** temp = new const Cheese * [m_numCheeses - 1];

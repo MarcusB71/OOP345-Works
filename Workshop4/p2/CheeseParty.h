@@ -26,7 +26,7 @@ namespace sdds {
         ~CheeseParty();
         CheeseParty& addCheese(const Cheese& cheese);
         CheeseParty& removeCheese();
-        void shrink(size_t index);
+        void shrink(unsigned index);
         void clearCP();
         std::ostream& print(std::ostream& os)const;
     };
