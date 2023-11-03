@@ -1,0 +1,37 @@
+/*
+Name: Marcus Brown
+Email: mbrown106@myseneca.ca
+StNo: 127900223
+Date: 03/11/2023
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.*/
+
+Functors are class functions that overload operator() which allow you to use a class function in order to manipulate data while maintaining a state.
+A Lambda Expression is an anonymous function that often perform one-off tasks that wouldnt be needed in the class and can be disposed of easily.
+As should be clear with my definition, you would use functors when state is of importance, while lambdas are used for one-off operations.
+
+Currently my 1 arg constructor throws a const char* exception 
+SpellChecker::SpellChecker(const char* filename) {
+        ifstream file(filename);
+        if (file) {
+            size_t count = 0;
+            while (file && count < SIZE_WORDS) {
+                string wordsLine{};
+                getline(file, wordsLine);
+                stringstream s(wordsLine);
+                s >> m_badWords[count] >> m_goodWords[count];
+                count++;
+            }
+        }
+        else {
+            throw "Bad file name!";
+        }
+    }
+To achieve the same result, I could use cerr << "Bad file Name!";
+I could have also used a try{}catch{} block, but I believe i needed to output only "Bad file Name!" for this workshop 
+
+As the logic between Movie and Book are very similar, I could create a parent class that contains the common data members and member functions between the two. 
+I would then have Movie and Book inherit from this parent class to eliminate duplicate logic.
+
+The default constructor can technically be removed with the use of = delete in the header file, but this would mean that any time you wanted to create an
+instance of Book or Movie you would need to provide the 1 argument parameter information right away.
+You wouldnt be able to create an empty instance of Book or Class to be populated later.
