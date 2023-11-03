@@ -1,3 +1,10 @@
+/*
+Name: Marcus Brown
+Email: mbrown106@myseneca.ca
+StNo: 127900223
+Date: 03/11/2023
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.*/
+
 #include "Book.h"
 #include <iomanip>
 #include <sstream>
@@ -28,20 +35,6 @@ namespace sdds {
         }
     }
     Book::~Book() {}
-    // Book::Book(const Book& other) {
-    //     *this = other;
-    // }
-    // Book& Book::operator=(const Book& other) {
-    //     if (this != &other) {
-    //         m_author = other.m_author;
-    //         m_title = other.m_title;
-    //         m_COFP = other.m_COFP;
-    //         m_year = other.m_year;
-    //         m_price = other.m_price;
-    //         m_desc = other.m_desc;
-    //     }
-    //     return *this;
-    // }
     const std::string& Book::title() const
     {
         return m_title;

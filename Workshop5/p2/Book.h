@@ -1,3 +1,10 @@
+/*
+Name: Marcus Brown
+Email: mbrown106@myseneca.ca
+StNo: 127900223
+Date: 03/11/2023
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.*/
+
 #ifndef SDDS_BOOK_H
 #define SDDS_BOOK_H
 #include <iostream>
@@ -16,8 +23,6 @@ namespace sdds {
         Book() = default;
         Book(const std::string& strBook);
         ~Book();
-        // Book(const Book& other);
-        // Book& operator=(const Book& other);
         const std::string& title() const;
         const std::string& country() const;
         const size_t& year() const;
