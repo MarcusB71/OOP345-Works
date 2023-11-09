@@ -129,15 +129,15 @@ namespace sdds {
         os << "Total size: " << size() << " bytes" << endl;
         for (auto content : m_contents) {
             if (content->type() == NodeType::DIR) {
-                os << "D | " << left << setw(15) << content->name() << " | ";
+                os << "D | " << left << setw(15) << content->name() << " |";
                 if (longMode) {
-                    os << setw(2) << right << content->count() << " | " << setw(4) << right << content->size() << " bytes |";
+                    os << setw(3) << right << content->count() << " | " << setw(4) << right << content->size() << " bytes |";
                 }
             }
             if (content->type() == NodeType::FILE) {
-                os << "F | " << left << setw(15) << content->name() << " | ";
+                os << "F | " << left << setw(15) << content->name() << " |";
                 if (longMode) {
-                    os << setw(3) << right << "" << "|" << setw(5) << right << content->size() << " bytes |";
+                    os << setw(4) << right << "" << "|" << setw(5) << right << content->size() << " bytes |";
                 }
             }
             os << endl;
