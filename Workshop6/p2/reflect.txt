@@ -1,0 +1,22 @@
+/*
+Name: Marcus Brown
+Email: mbrown106@myseneca.ca
+StNo: 127900223
+Date: 2023/11/08
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.*/
+
+When using the new keyword, it will always be my resposibility to deallocate that memory even in the case of a vector.
+
+I had to use a dynamic_cast to downcast the Resource pointer to its derived class, Directory. 
+If the compiler is able to cast, then it will return a pointer of the derived class, if not, it 
+will return nullptr. This way I will be able to access the member functions of Directory. 
+In this example I needed to use it so I could use the find function:
+
+
+    Directory* newDir = dynamic_cast<Directory*>(curDir->find(dirName));
+
+Using std::vector<sdds::Resource*> is the best method of storing an array of objects within a hierarchy. 
+For the sake of preserving polymorphism and access to the derived class of the object we can store pointers in our vector.
+If we used std::vector<sdds::Resource>, we would essentially be doing object slicing which is when you store a 
+hierarchical object in an array which ends up causing it to lose access to its derived class.
+This method would also use significantly more memory as it would be storing copies of the objects.
