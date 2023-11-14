@@ -15,11 +15,15 @@ namespace sdds {
     std::string Utilities::extractToken(const std::string& str, size_t& next_pos, bool& more) {
         std::string token;
         size_t delimPos = str.find(m_delimiter, next_pos);
-        if (str[0] == m_delimiter && str.length() <= 1) {
+        if (next_pos >= str.length()) {
             more = false;
-            throw "error single char and its a delim";
+            throw "Invalid position for token extraction";
         }
-        if (delimPos != std::string::npos) {
+        else if (str[next_pos] == m_delimiter) {
+            more = false;
+            throw "Delim at first position";
+        }
+        else if (delimPos != std::string::npos) {
             token = trim(str.substr(next_pos, delimPos - next_pos));
             next_pos = str.find(m_delimiter, next_pos) + 1;
             more = true;
@@ -30,10 +34,6 @@ namespace sdds {
         }
         if (m_widthField < token.length()) {
             m_widthField = token.length();
-        }
-        if (str[delimPos - 1] == m_delimiter && str[delimPos] == m_delimiter) {
-            more = false;
-            throw "error delim twice";
         }
         return token;
     }
