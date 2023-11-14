@@ -5,7 +5,7 @@
 namespace sdds {
     class Station {
     private:
-        int m_id{};
+        size_t m_id{};
         std::string m_name{};
         std::string m_desc{};
         size_t m_nextSN{}; //next serial number to be assigned
