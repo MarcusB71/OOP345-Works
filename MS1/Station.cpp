@@ -13,8 +13,8 @@ namespace sdds {
         bool more = true;
         m_id = ++id_generator;
         m_name = localUtil.extractToken(record, next_pos, more);
-        m_nextSN = stoi(localUtil.extractToken(record, next_pos, more));
-        m_inventory = stoi(localUtil.extractToken(record, next_pos, more));
+        m_nextSN = stoul(localUtil.extractToken(record, next_pos, more));
+        m_inventory = stoul(localUtil.extractToken(record, next_pos, more));
         if (m_name.length() > m_widthField) {
             m_widthField = m_name.length();
         }
