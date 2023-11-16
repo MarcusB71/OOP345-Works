@@ -11,6 +11,7 @@ I have done all the coding by myself and only copied the code that my professor 
 #include <iomanip>
 #include <algorithm>
 #include <numeric>
+#include <sstream>
 using namespace std;
 namespace sdds {
     CovidCollection::CovidCollection(std::string fileName) {
@@ -49,6 +50,7 @@ namespace sdds {
             out << "|" << setw(80) << right << "Total deaths around the world: " << worldDeaths << " |" << endl;
         }
         else {
+            out << "Displaying information of country = " << country << endl;
             for_each(m_collection.begin(), m_collection.end(), [&out, country](const Covid& C) {
                 if (C.m_country == country) {
                     out << C << endl;
@@ -66,9 +68,15 @@ namespace sdds {
                 }
                 else { return total; }
                 });
-            // out << std::setw(89) << std::setfill('-') << '\n' << std::setfill(' ');
-            out << "|" << setw(79 - country.length()) << right << "Total cases in " << setw(country.length()) << country << ": " << countryCases << " |" << endl;
-            out << "|" << setw(79 - country.length()) << right << "Total deaths in " << setw(country.length()) << country << ": " << countryDeaths << " |" << endl;
+            out << std::setw(89) << std::setfill('-') << '\n' << std::setfill(' ');
+            // out << "|" << setw(79 - country.length()) << right << "Total cases in " << setw(country.length()) << country << ": " << countryCases << " |" << endl;
+            // out << "|" << setw(79 - country.length()) << right << "Total deaths in " << setw(country.length()) << country << ": " << countryDeaths << " |" << endl;
+            stringstream totalCase{};
+            stringstream totalDeaths{};
+            totalCase << "Total cases in " << country << ": " << countryCases;
+            out << "|" << setw(85) << right << totalCase.str() << " |" << endl;
+            totalDeaths << "Total deaths in " << country << ": " << countryDeaths;
+            out << "|" << setw(85) << right << totalDeaths.str() << " |" << endl;
             size_t extraSpace{};
             if (((double)countryCases / worldCases) * 100 < 10) {
                 extraSpace++;
