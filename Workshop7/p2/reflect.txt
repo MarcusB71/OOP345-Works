@@ -1,0 +1,29 @@
+/*
+Name: Marcus Brown
+Email: mbrown106@myseneca.ca
+StNo: 127900223
+Date: 2023/11/16
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.*/
+
+for_each:
+    The for_each STL function acts as a for loop which iterates over every element. 
+accumulate:
+    this STL function gets the sum of values within a range
+sort:
+    algorthim which sorts elements in a range.
+any_of:
+    checks if at least one element in the range contains the condition
+copy_if:
+    copies from one range or list to another if condition is passed
+transform:
+    applies an effect to each element in a range
+These STL algorthim functions abstracted out some of the tedious work. Once you learn the syntax they can be an extremely valuable tool.
+They help transform the normal c++ lower level language which is often time consuming and tedious, into something that is much faster
+to write, but still maintains the lower level capabilities.
+
+Though some of the STL functions wouldnt have been too hard to write myself, they definitely will save me a ton of time in the 
+future and the lines of code I need to write.
+
+My sort function which calls my compareCovid function has a default sort mechanism where if none of the fields match the user input
+it will sort based on deaths. However, an easier solution would be sort based on index. This would reduce user typos in the form 
+of strings. If the user sorted an out of bounds index I could throw an error. 
