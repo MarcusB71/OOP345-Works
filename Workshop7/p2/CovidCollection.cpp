@@ -18,14 +18,17 @@ namespace sdds {
         ifstream file(fileName);
         if (file) {
             while (file.peek() != EOF) {
-                Covid C;
+                Covid C{};
                 char buffer[26];
                 file.read(buffer, 25);
-                C.m_country = trim(buffer);
+                C.m_country = buffer;
+                C.m_country = trim(C.m_country);
                 file.read(buffer, 25);
-                C.m_city = trim(buffer);
+                C.m_city = buffer;
+                C.m_city = trim(C.m_city);
                 file.read(buffer, 25);
-                C.m_variant = trim(buffer);
+                C.m_variant = buffer;
+                C.m_variant = trim(C.m_variant);
                 file >> C.m_year >> C.m_numCases >> C.m_numDeaths;
                 m_collection.push_back(C);
             }
