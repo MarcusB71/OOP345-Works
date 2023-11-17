@@ -30,6 +30,7 @@ namespace sdds {
                 C.m_variant = buffer;
                 C.m_variant = trim(C.m_variant);
                 file >> C.m_year >> C.m_numCases >> C.m_numDeaths;
+                file.ignore(99999, '\n');
                 m_collection.push_back(C);
             }
             file.close();
