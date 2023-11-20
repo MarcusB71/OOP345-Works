@@ -20,7 +20,7 @@ namespace sdds {
         if (!movieLine.empty()) { m_title = trim(movieLine); }
         getline(s, movieLine, ',');
         if (!movieLine.empty()) { m_year = stoi(trim(movieLine)); }
-        while (getline(s, movieLine, ',')) {
+        while (getline(s, movieLine, '\n')) {
             if (!movieLine.empty()) {
                 m_desc += " ";
             }
