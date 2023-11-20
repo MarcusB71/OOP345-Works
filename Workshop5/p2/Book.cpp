@@ -68,7 +68,7 @@ namespace sdds {
     }
     ostream& Book::print(ostream& os)const
     {
-        return os << setw(20) << m_author << " | " << setw(22) << m_title << " | " << setw(5) << m_COFP << " | " << setw(4) << m_year << " | " << setw(6) << fixed << setprecision(2) << m_price << " | " << m_desc << std::endl;
+        return os << setw(20) << m_author << " | " << setw(22) << m_title << " | " << setw(5) << m_COFP << " | " << setw(4) << m_year << " | " << setw(6) << fixed << setprecision(2) << m_price << " |" << m_desc << std::endl;
     }
     ostream& operator<<(ostream& os, const Book& b)
     {

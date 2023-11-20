@@ -48,7 +48,7 @@ namespace sdds {
     }
 
     ostream& Movie::print(ostream& os)const {
-        os << setw(40) << m_title << " | " << setw(4) << m_year << " | " << m_desc << endl;
+        os << setw(40) << m_title << " | " << setw(4) << m_year << " |" << m_desc << endl;
         return os;
     }
     ostream& operator<<(ostream& os, const Movie& M) {
