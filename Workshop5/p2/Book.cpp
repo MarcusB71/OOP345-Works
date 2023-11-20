@@ -27,7 +27,7 @@ namespace sdds {
         if (!token.empty()) { m_price = stod(trim(token)); }
         getline(s, token, ',');
         if (!token.empty()) { m_year = stoi(trim(token)); }
-        while (getline(s, token, ',')) {
+        while (getline(s, token, '\n')) {
             if (!token.empty()) {
                 m_desc += " ";
             }
