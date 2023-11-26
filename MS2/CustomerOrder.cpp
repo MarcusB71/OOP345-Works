@@ -21,7 +21,7 @@ namespace sdds {
         while (more) {
             std::string itemName = localUtil.extractToken(str, next_pos, more);
             auto temp = new Item * [m_cntItem + 1];
-            for (size_t i = 0; i < m_cntItem; ++i) {
+            for (size_t i = 0; i < m_cntItem; i++) {
                 temp[i] = m_lstItem[i];
             }
             temp[m_cntItem++] = new Item(itemName);
@@ -100,7 +100,7 @@ namespace sdds {
         }
     }
     void sdds::CustomerOrder::clearList() {
-        for (size_t i = 0; i < m_cntItem; ++i) {
+        for (size_t i = 0; i < m_cntItem; i++) {
             delete m_lstItem[i];
         }
         delete m_lstItem;
