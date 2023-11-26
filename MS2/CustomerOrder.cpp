@@ -21,10 +21,11 @@ namespace sdds {
         while (more) {
             std::string itemName = localUtil.extractToken(str, next_pos, more);
             auto temp = new Item * [m_cntItem + 1];
-            for (size_t i = 0; i < m_cntItem; ++i) {
+            for (size_t i = 0; i < m_cntItem; i++) {
                 temp[i] = m_lstItem[i];
             }
-            temp[m_cntItem++] = new Item(itemName);
+            temp[m_cntItem] = new Item(itemName);
+            m_cntItem++;
             delete[] m_lstItem;
             m_lstItem = temp;
         }
@@ -42,12 +43,12 @@ namespace sdds {
         if (this != &other) {
             clearList();
             m_name = other.m_name;
-            other.m_name = "";
             m_product = other.m_product;
-            other.m_product = "";
             m_cntItem = other.m_cntItem;
-            other.m_cntItem = 0;
             m_lstItem = other.m_lstItem;
+            other.m_name = "";
+            other.m_product = "";
+            other.m_cntItem = 0;
             other.m_lstItem = nullptr;
         }
         return *this;
@@ -90,7 +91,6 @@ namespace sdds {
                 }
             }
         }
-
     }
     void CustomerOrder::display(std::ostream& os) const {
         os << m_name << " - " << m_product << endl;
@@ -100,7 +100,7 @@ namespace sdds {
         }
     }
     void sdds::CustomerOrder::clearList() {
-        for (size_t i = 0; i < m_cntItem; ++i) {
+        for (size_t i = 0; i < m_cntItem; i++) {
             delete m_lstItem[i];
         }
         delete m_lstItem;
