@@ -81,11 +81,11 @@ namespace sdds {
                     m_lstItem[i]->m_isFilled = true;
                     m_lstItem[i]->m_serialNumber = station.getNextSerialNumber();
                     station.updateQuantity();
-                    os << "Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
+                    os << "    Filled " << m_name << ", " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
                     finished = true;
                 }
                 else {
-                    os << "Unable to fill " << m_name << " " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
+                    os << "    Unable to fill " << m_name << " " << m_product << " [" << m_lstItem[i]->m_itemName << "]" << endl;
                 }
             }
         }
