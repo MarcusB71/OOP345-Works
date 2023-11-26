@@ -11,7 +11,7 @@
 #include <iomanip>
 using namespace std;
 namespace sdds {
-    size_t CustomerOrder::m_widthField = 0;
+    size_t CustomerOrder::m_widthField{};
     CustomerOrder::CustomerOrder(const std::string& str) {
         Utilities localUtil{};
         size_t next_pos = 0;
@@ -24,8 +24,7 @@ namespace sdds {
             for (size_t i = 0; i < m_cntItem; i++) {
                 temp[i] = m_lstItem[i];
             }
-            temp[m_cntItem] = new Item(itemName);
-            m_cntItem++;
+            temp[m_cntItem++] = new Item(itemName);
             delete[] m_lstItem;
             m_lstItem = temp;
         }
@@ -46,20 +45,19 @@ namespace sdds {
             m_product = other.m_product;
             m_cntItem = other.m_cntItem;
             m_lstItem = other.m_lstItem;
-            other.m_name = "";
-            other.m_product = "";
+            other.m_name.clear();
+            other.m_product.clear();
             other.m_cntItem = 0;
             other.m_lstItem = nullptr;
         }
         return *this;
     }
-
     CustomerOrder::~CustomerOrder() {
         clearList();
     }
     bool CustomerOrder::isOrderFilled() const {
         bool filled{ true };
-        for (size_t i = 0; i < m_cntItem; i++) {
+        for (size_t i = 0; i < m_cntItem && filled; i++) {
             if (!m_lstItem[i]->m_isFilled) {
                 filled = false;
             }
@@ -68,7 +66,7 @@ namespace sdds {
     }
     bool CustomerOrder::isItemFilled(const std::string& itemName) const {
         bool filled{ true };
-        for (size_t i = 0; i < m_cntItem; i++) {
+        for (size_t i = 0; i < m_cntItem && filled; i++) {
             if (m_lstItem[i]->m_itemName == itemName && !m_lstItem[i]->m_isFilled) {
                 filled = false;
             }
@@ -103,6 +101,6 @@ namespace sdds {
         for (size_t i = 0; i < m_cntItem; i++) {
             delete m_lstItem[i];
         }
-        delete m_lstItem;
+        delete[] m_lstItem;
     }
 }
