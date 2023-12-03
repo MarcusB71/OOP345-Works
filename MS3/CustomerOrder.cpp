@@ -95,7 +95,7 @@ namespace sdds {
         os << m_name << " - " << m_product << endl;
         for (size_t i = 0; i < m_cntItem; i++) {
             os << "[" << setw(6) << setfill('0') << m_lstItem[i]->m_serialNumber << setfill(' ') << "] " << left << setw(m_widthField) << m_lstItem[i]->m_itemName << " - ";
-            m_lstItem[i]->m_isFilled ? os << "Filled" << std::endl : os << "TO BE FILLED" << std::endl;
+            m_lstItem[i]->m_isFilled ? os << "FILLED" << std::endl : os << "TO BE FILLED" << std::endl;
         }
     }
     void sdds::CustomerOrder::clearList() {
