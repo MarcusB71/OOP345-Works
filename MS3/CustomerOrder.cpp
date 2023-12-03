@@ -87,7 +87,7 @@ namespace sdds {
             }
         }
         else if (!isItemFilled(station.getItemName()) && station.getQuantity() == 0) {
-            os << "    Unable to fill " << m_name << " " << m_product << " [" << station.getItemName() << "]" << endl;
+            os << "    Unable to fill " << m_name << ", " << m_product << " [" << station.getItemName() << "]" << endl;
         }
     }
     void CustomerOrder::display(std::ostream& os) const {
